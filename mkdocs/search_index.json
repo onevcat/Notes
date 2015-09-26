@@ -1,0 +1,49 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "\u6b22\u8fce\n\n\n\u8fd9\u91cc\u662f \nonevcat\n \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002\n\n\n\u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728 \nGitHub\n \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "\u4e3b\u9875"
+        }, 
+        {
+            "location": "/#_1", 
+            "text": "\u8fd9\u91cc\u662f  onevcat  \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002  \u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728  GitHub  \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "\u6b22\u8fce"
+        }, 
+        {
+            "location": "/reserve-enginnering/tools/", 
+            "text": "\u5de5\u5177\n\n\ncycript\n\n\nCycript allows developers to explore and modify running applications on either iOS or Mac OS X using a hybrid of Objective-C++ and JavaScript syntax through an interactive console that features syntax highlighting and tab completion.\n\n\n\u53c2\u8003\u6587\u6863 \niPhonDev Wiki\n\uff0c\nCycript Manual\n\n\n\u547d\u4ee4\u4ee5 ? \u5f00\u5934\n\n\n\n\n?syntax \u9ad8\u4eae\n\n\n?exit\n\n\n?expand \u5c55\u5f00 CYON (Cycript Object Notation)\u3002\u4e00\u822c\u7528\u6765\u5c55\u5f00\u5b57\u7b26\u4e32\u4e2d\u7684 \n\\n\n\n\n?debug\n\n\n\n\n\u4e0e Objective-C \u4ea4\u4e92\n\n\n\n\n@\n - @\"hello\"\uff0c@[2,4,5]\n\n\n\u81ea\u7701 - \ninstanceof\n \n@\"hello\" instanceof String\n -\n \ntrue\n\n\nselector - @selector(this:is:a:message:) -\n sel_registerName(\"this:is:a:message:\")\n    \u53ef\u4ee5\u76f4\u63a5 call() \u4e00\u4e2a selector\n\n\n#\n \u4ee3\u8868 object\uff1aUIApp -\n #\"\n\", s = #0x10e803490 -\n #\"\n\"\n\n\n\u4f7f\u7528 \n*\n \u8fd4\u56de\u5bf9\u8c61\u7ed3\u6784\u7684 representation\uff0c\u4f7f\u7528 \n-\n \u8bbf\u95ee\u6210\u5458\n\n\nmessages\n \u83b7\u53d6\u7c7b\u578b\u80fd\u54cd\u5e94\u7684\u6d88\u606f\uff1a\nNSObject.messages\n\n\nframe -  [[1, 1],{width:2,height:2}]\n\n\n\u6dfb\u52a0 Category\n\n\n\n\ncy# @implementation NSObject (MyCategory)\ncy\n - description { return \nhello\n; }\ncy\n - (double) f:(int)v  { return v * 0.5; }\ncy\n @end\ncy# o = [new NSObject init]\n#\nhello\n\ncy# [o f:3]\n1.5\n\n\n\n\n\n\nblock\uff1a\nblock = ^ int (int value) { return value + 5; }\n\n\n\n\n\u5176\u4ed6\n\n\n\n\nchoose(Class)\uff1a\u6240\u6709 \nClass\n \u7684\u5b9e\u4f8b\u3002\u901a\u8fc7\u5bfb\u627e heap \u4e0a\u5185\u5b58\u84dd\u56fe\u4e00\u81f4\u7684\u5757\u6765\u786e\u5b9a\u662f\u5426\u662f\u5b9e\u4f8b\n\n\n\u548c Mobile Substrate \u4e00\u8d77\u4f7f\u7528\uff1a@import com.saurik.substrate.MS\n\n\nC \u4ea4\u4e92\uff1a\u4f7f\u7528 dlopen \u548c dlsym \u52a0\u8f7d\u7b26\u53f7\uff1a\n    \nc\n    dlsym(RTLD_DEFAULT, \"swift_demangleClassSimple\")", 
+            "title": "\u5de5\u5177"
+        }, 
+        {
+            "location": "/reserve-enginnering/tools/#_1", 
+            "text": "", 
+            "title": "\u5de5\u5177"
+        }, 
+        {
+            "location": "/reserve-enginnering/tools/#cycript", 
+            "text": "Cycript allows developers to explore and modify running applications on either iOS or Mac OS X using a hybrid of Objective-C++ and JavaScript syntax through an interactive console that features syntax highlighting and tab completion.  \u53c2\u8003\u6587\u6863  iPhonDev Wiki \uff0c Cycript Manual  \u547d\u4ee4\u4ee5 ? \u5f00\u5934   ?syntax \u9ad8\u4eae  ?exit  ?expand \u5c55\u5f00 CYON (Cycript Object Notation)\u3002\u4e00\u822c\u7528\u6765\u5c55\u5f00\u5b57\u7b26\u4e32\u4e2d\u7684  \\n  ?debug   \u4e0e Objective-C \u4ea4\u4e92   @  - @\"hello\"\uff0c@[2,4,5]  \u81ea\u7701 -  instanceof   @\"hello\" instanceof String  -   true  selector - @selector(this:is:a:message:) -  sel_registerName(\"this:is:a:message:\")\n    \u53ef\u4ee5\u76f4\u63a5 call() \u4e00\u4e2a selector  #  \u4ee3\u8868 object\uff1aUIApp -  #\" \", s = #0x10e803490 -  #\" \"  \u4f7f\u7528  *  \u8fd4\u56de\u5bf9\u8c61\u7ed3\u6784\u7684 representation\uff0c\u4f7f\u7528  -  \u8bbf\u95ee\u6210\u5458  messages  \u83b7\u53d6\u7c7b\u578b\u80fd\u54cd\u5e94\u7684\u6d88\u606f\uff1a NSObject.messages  frame -  [[1, 1],{width:2,height:2}]  \u6dfb\u52a0 Category   cy# @implementation NSObject (MyCategory)\ncy  - description { return  hello ; }\ncy  - (double) f:(int)v  { return v * 0.5; }\ncy  @end\ncy# o = [new NSObject init]\n# hello \ncy# [o f:3]\n1.5   block\uff1a block = ^ int (int value) { return value + 5; }   \u5176\u4ed6   choose(Class)\uff1a\u6240\u6709  Class  \u7684\u5b9e\u4f8b\u3002\u901a\u8fc7\u5bfb\u627e heap \u4e0a\u5185\u5b58\u84dd\u56fe\u4e00\u81f4\u7684\u5757\u6765\u786e\u5b9a\u662f\u5426\u662f\u5b9e\u4f8b  \u548c Mobile Substrate \u4e00\u8d77\u4f7f\u7528\uff1a@import com.saurik.substrate.MS  C \u4ea4\u4e92\uff1a\u4f7f\u7528 dlopen \u548c dlsym \u52a0\u8f7d\u7b26\u53f7\uff1a\n     c\n    dlsym(RTLD_DEFAULT, \"swift_demangleClassSimple\")", 
+            "title": "cycript"
+        }, 
+        {
+            "location": "/", 
+            "text": "\u6b22\u8fce\n\n\n\u8fd9\u91cc\u662f \nonevcat\n \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002\n\n\n\u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728 \nGitHub\n \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "Advanced Swift"
+        }, 
+        {
+            "location": "/#_1", 
+            "text": "\u8fd9\u91cc\u662f  onevcat  \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002  \u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728  GitHub  \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "\u6b22\u8fce"
+        }, 
+        {
+            "location": "/", 
+            "text": "\u6b22\u8fce\n\n\n\u8fd9\u91cc\u662f \nonevcat\n \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002\n\n\n\u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728 \nGitHub\n \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "NSHipster"
+        }, 
+        {
+            "location": "/#_1", 
+            "text": "\u8fd9\u91cc\u662f  onevcat  \u7684\u516c\u5f00\u7b14\u8bb0\u672c\u3002  \u8fd9\u4e2a\u7b14\u8bb0\u672c\u5f00\u6e90\u5728  GitHub  \u4e0a\uff0c\u8bb0\u5f55\u4e86\u4e00\u4e9b\u6742\u4e03\u6742\u516b\u7684\u4e1c\u897f\uff0c\u4e3b\u8981\u662f\u4e3a\u4e86\u65b9\u4fbf\u81ea\u5df1\u4e4b\u540e\u67e5\u770b\u3002", 
+            "title": "\u6b22\u8fce"
+        }
+    ]
+}

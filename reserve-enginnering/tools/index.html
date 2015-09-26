@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>工具 - OneV's Notes</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">OneV's Notes</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">主页</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">逆向工程</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">工具</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Swift</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../..">Advanced Swift</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../..">NSHipster</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../..">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">工具</a></li>
+        
+            <li><a href="#cycript">cycript</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="_1">工具</h1>
+<h2 id="cycript"><a href="http://www.cycript.org">cycript</a></h2>
+<p>Cycript allows developers to explore and modify running applications on either iOS or Mac OS X using a hybrid of Objective-C++ and JavaScript syntax through an interactive console that features syntax highlighting and tab completion.</p>
+<p>参考文档 <a href="http://iphonedevwiki.net/index.php/Cycript">iPhonDev Wiki</a>，<a href="http://www.cycript.org/manual/">Cycript Manual</a></p>
+<h3 id="_2">命令以 ? 开头</h3>
+<ul>
+<li>?syntax 高亮</li>
+<li>?exit</li>
+<li>?expand 展开 CYON (Cycript Object Notation)。一般用来展开字符串中的 <code>\n</code></li>
+<li>?debug</li>
+</ul>
+<h3 id="objective-c">与 Objective-C 交互</h3>
+<ul>
+<li><code>@</code> - @"hello"，@[2,4,5]</li>
+<li>自省 - <code>instanceof</code> <code>@"hello" instanceof String</code> -&gt; <code>true</code></li>
+<li>selector - @selector(this:is:a:message:) -&gt; sel_registerName("this:is:a:message:")
+    可以直接 call() 一个 selector</li>
+<li><code>#</code> 代表 object：UIApp -&gt; #"<SpringBoard: 0x10e803490>", s = #0x10e803490 -&gt; #"<SpringBoard: 0x10e803490>"</li>
+<li>使用 <code>*</code> 返回对象结构的 representation，使用 <code>-&gt;</code> 访问成员</li>
+<li><code>messages</code> 获取类型能响应的消息：<code>NSObject.messages</code></li>
+<li>frame -  [[1, 1],{width:2,height:2}]</li>
+<li>添加 Category</li>
+</ul>
+<pre><code>cy# @implementation NSObject (MyCategory)
+cy&gt; - description { return &quot;hello&quot;; }
+cy&gt; - (double) f:(int)v  { return v * 0.5; }
+cy&gt; @end
+cy# o = [new NSObject init]
+#&quot;hello&quot;
+cy# [o f:3]
+1.5
+</code></pre>
+
+<ul>
+<li>block：<code>block = ^ int (int value) { return value + 5; }</code></li>
+</ul>
+<h3 id="_3">其他</h3>
+<ul>
+<li>choose(Class)：所有 <code>Class</code> 的实例。通过寻找 heap 上内存蓝图一致的块来确定是否是实例</li>
+<li>和 Mobile Substrate 一起使用：@import com.saurik.substrate.MS</li>
+<li>C 交互：使用 dlopen 和 dlsym 加载符号：
+    <code>c
+    dlsym(RTLD_DEFAULT, "swift_demangleClassSimple")</code></li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
