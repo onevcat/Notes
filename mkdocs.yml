@@ -6,4 +6,4 @@ pages:
         - 工具: reserve-enginnering/tools.md
     - Swift:
         - Advanced Swift: index.md
-    - NSHipster: index.md
+    - NSHipster: nshipster/index.md
