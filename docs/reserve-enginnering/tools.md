@@ -1,5 +1,3 @@
-# 工具
-
 ## [cycript](http://www.cycript.org)
 
 Cycript allows developers to explore and modify running applications on either iOS or Mac OS X using a hybrid of Objective-C++ and JavaScript syntax through an interactive console that features syntax highlighting and tab completion.
@@ -41,6 +39,8 @@ cy# [o f:3]
 * choose(Class)：所有 `Class` 的实例。通过寻找 heap 上内存蓝图一致的块来确定是否是实例
 * 和 Mobile Substrate 一起使用：@import com.saurik.substrate.MS
 * C 交互：使用 dlopen 和 dlsym 加载符号：
-    ```c
-    dlsym(RTLD_DEFAULT, "swift_demangleClassSimple")
-    ```
+```c
+dlsym(RTLD_DEFAULT, "swift_demangleClassSimple")
+```
+
+## [dumpdecrypted](https://github.com/stefanesser/dumpdecrypted)
