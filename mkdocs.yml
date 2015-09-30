@@ -1,9 +1,12 @@
 site_name: OneV's Notes
 pages:
 - 主页: index.md
-- 笔记: 
-    - 逆向工程: 
+- 笔记:
+    - 逆向工程:
         - 工具: reserve-enginnering/tools.md
     - Swift:
         - Advanced Swift: swift/advanced-swift.md
+        - Reactive Cocoa: swift/rac.md
     - NSHipster: nshipster/index.md
+    - 摄影:
+        - Photoshop: photo/photoshop.md
