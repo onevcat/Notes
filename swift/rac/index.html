@@ -165,7 +165,7 @@
         <li class="main "><a href="#signal">Signal</a></li>
         
     
-        <li class="main "><a href="#_1">操作组合</a></li>
+        <li class="main "><a href="#_1">操作和组合</a></li>
         
             <li><a href="#lift">lift</a></li>
         
@@ -174,6 +174,27 @@
             <li><a href="#reduce">reduce</a></li>
         
             <li><a href="#collect">collect</a></li>
+        
+            <li><a href="#combinelatest">combineLatest</a></li>
+        
+            <li><a href="#zip">zip</a></li>
+        
+            <li><a href="#flattenflatmap">flatten/flatMap</a></li>
+        
+            <li><a href="#flatmaperror">flatMapError</a></li>
+        
+            <li><a href="#retry">retry</a></li>
+        
+            <li><a href="#promoteerrors">promoteErrors</a></li>
+        
+    
+        <li class="main "><a href="#action">Action</a></li>
+        
+    
+        <li class="main "><a href="#property">Property</a></li>
+        
+    
+        <li class="main "><a href="#disposables">Disposables</a></li>
         
     
     </ul>
@@ -218,7 +239,8 @@ sendNext(sink, 2)
 <pre><code class="swift">let producer = signalProducer.on(sink)
 </code></pre>
 
-<h2 id="_1">操作组合</h2>
+<p>pipe 和 buffer 都是非 RAC 世界与 RAC 世界连接的桥梁。在开发中，尽量尝试减少这种桥梁的数量，而更多地保持在 RAC 的世界中。</p>
+<h2 id="_1">操作和组合</h2>
 <h3 id="lift">lift</h3>
 <p>对 Producer 的产生的 Signal 进行操作，并映射到一个新的 Producer。与 <code>map</code> 的区别：<code>map</code> 对 signal 的 Value 进行操作，而 lifting 是对整个信号操作。</p>
 <p>关于 Lifting，<a href="http://stackoverflow.com/questions/2395697/haskell-newbie-question-what-is-lifting">这里</a>有一个不错的答案解释。</p>
@@ -247,7 +269,48 @@ sendNext(sink, 1)     // nothing printed
 sendNext(sink, 2)     // nothing printed
 sendNext(sink, 3)     // nothing printed
 sendCompleted(sink)   // prints [1, 2, 3]
-</code></pre></div>
+</code></pre>
+
+<h3 id="combinelatest">combineLatest</h3>
+<p>直到两个信号输出了至少一次 next 时，发送第一次 next (将两个信号最新的 next 合并)；之后每次任意信号 next 则触发新信号的 next。<a href="http://neilpa.me/rac-marbles/#combineLatest">图例</a></p>
+<pre><code>combineLatest
+  [0, 1,        2                  ]
+  [      A,            B,     C    ]
+-&gt;[      (1,A), (2,A), (2,B), (2,C)]
+</code></pre>
+
+<h3 id="zip">zip</h3>
+<p>直到两个信号输出了至少一次 next 时，发送第一次 next (将两个信号最新的 next 合并)；之后将两个信号的后一个 next 合并触发新信号的 next。<a href="http://neilpa.me/rac-marbles/#zip">图例</a></p>
+<pre><code>zip
+  [0, 1,        2              ]
+  [      A,        B,     C    ]
+-&gt;[      (0,A),    (1,B), (2,C)]
+</code></pre>
+
+<h3 id="flattenflatmap">flatten/flatMap</h3>
+<p>将多个信号/信号源展平为一个信号。</p>
+<h4 id="merge">.Merge</h4>
+<p>按照信号 next 被发送的顺序组织结果信号，不同信号按照时间插值。<a href="http://neilpa.me/rac-marbles/">图例</a></p>
+<h4 id="concat">.Concat</h4>
+<p>按照信号整体的顺序组织信号，信号按照加入时间串联。<a href="http://neilpa.me/rac-marbles/#concat">图例</a></p>
+<h4 id="latest">.Latest</h4>
+<p>只关心最后加入的信号值。</p>
+<h3 id="flatmaperror">flatMapError</h3>
+<p>将 Error 映射为 Value，并原地开始一个新的 signal producer，相当于化解 Error。</p>
+<h3 id="retry">retry</h3>
+<p>遇到错误时重新开始 signal producer，直到达到重试错误次数。</p>
+<h3 id="promoteerrors">promoteErrors</h3>
+<p>让一个不能产生错误的 signal producer 可以产生某个错误。</p>
+<h2 id="action">Action</h2>
+<h2 id="property">Property</h2>
+<p>存储变量，通常是用来做 binding 的 entrypoint。</p>
+<p>用 <code>&lt;~</code> 来绑定一个属性，操作符左侧需要是 <code>MutablePropertyType</code>：</p>
+<ul>
+<li><code>property &lt;~ signal</code> 将信号绑定到属性上，信号的最新值将被设定到属性上</li>
+<li><code>property &lt;~ signal producer</code> 将信号源绑定到属性上，并开始信号源，将得到的信号值设定到属性上</li>
+<li><code>property &lt;~ otherProperty</code> 将另一个属性绑定到属性上，源属性变化时，左侧属性也跟随变化</li>
+</ul>
+<h2 id="disposables">Disposables</h2></div>
             
         </div>
 
