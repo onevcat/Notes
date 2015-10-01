@@ -50,7 +50,9 @@ sendNext(sink, 2)
 let producer = signalProducer.on(sink)
 ```
 
-## 操作组合
+pipe 和 buffer 都是非 RAC 世界与 RAC 世界连接的桥梁。在开发中，尽量尝试减少这种桥梁的数量，而更多地保持在 RAC 的世界中。
+
+## 操作和组合
 
 ### lift
 
@@ -92,3 +94,68 @@ sendNext(sink, 2)     // nothing printed
 sendNext(sink, 3)     // nothing printed
 sendCompleted(sink)   // prints [1, 2, 3]
 ```
+
+### combineLatest
+
+直到两个信号输出了至少一次 next 时，发送第一次 next (将两个信号最新的 next 合并)；之后每次任意信号 next 则触发新信号的 next。[图例](http://neilpa.me/rac-marbles/#combineLatest)
+
+```
+combineLatest
+  [0, 1,        2                  ]
+  [      A,            B,     C    ]
+->[      (1,A), (2,A), (2,B), (2,C)]
+```
+
+### zip
+
+直到两个信号输出了至少一次 next 时，发送第一次 next (将两个信号最新的 next 合并)；之后将两个信号的后一个 next 合并触发新信号的 next。[图例](http://neilpa.me/rac-marbles/#zip)
+
+```
+zip
+  [0, 1,        2              ]
+  [      A,        B,     C    ]
+->[      (0,A),    (1,B), (2,C)]
+```
+
+### flatten/flatMap
+
+将多个信号/信号源展平为一个信号。
+
+#### .Merge
+
+按照信号 next 被发送的顺序组织结果信号，不同信号按照时间插值。[图例](http://neilpa.me/rac-marbles/)
+
+#### .Concat
+
+按照信号整体的顺序组织信号，信号按照加入时间串联。[图例](http://neilpa.me/rac-marbles/#concat)
+
+#### .Latest
+
+只关心最后加入的信号值。
+
+
+### flatMapError
+
+将 Error 映射为 Value，并原地开始一个新的 signal producer，相当于化解 Error。
+
+### retry
+
+遇到错误时重新开始 signal producer，直到达到重试错误次数。
+
+### promoteErrors
+
+让一个不能产生错误的 signal producer 可以产生某个错误。
+
+## Action
+
+## Property
+
+存储变量，通常是用来做 binding 的 entrypoint。
+
+用 `<~` 来绑定一个属性，操作符左侧需要是 `MutablePropertyType`：
+
+* `property <~ signal` 将信号绑定到属性上，信号的最新值将被设定到属性上
+* `property <~ signal producer` 将信号源绑定到属性上，并开始信号源，将得到的信号值设定到属性上
+* `property <~ otherProperty` 将另一个属性绑定到属性上，源属性变化时，左侧属性也跟随变化
+
+## Disposables
