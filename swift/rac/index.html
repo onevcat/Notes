@@ -197,6 +197,9 @@
         <li class="main "><a href="#disposables">Disposables</a></li>
         
     
+        <li class="main "><a href="#schedulers">Schedulers</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -310,7 +313,12 @@ sendCompleted(sink)   // prints [1, 2, 3]
 <li><code>property &lt;~ signal producer</code> 将信号源绑定到属性上，并开始信号源，将得到的信号值设定到属性上</li>
 <li><code>property &lt;~ otherProperty</code> 将另一个属性绑定到属性上，源属性变化时，左侧属性也跟随变化</li>
 </ul>
-<h2 id="disposables">Disposables</h2></div>
+<h2 id="disposables">Disposables</h2>
+<p><code>Disposable</code> 接口表示。</p>
+<p>开始一个 producer 或者开始监视一个 signal 时可以获取到对应的 Disposable。可以通过 Disposables 开取消 (Interrupted) 任务。</p>
+<h2 id="schedulers">Schedulers</h2>
+<p><code>SchedulerType</code> 接口表示。</p>
+<p>串行执行队列，</p></div>
             
         </div>
 
