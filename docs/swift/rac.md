@@ -159,3 +159,13 @@ zip
 * `property <~ otherProperty` 将另一个属性绑定到属性上，源属性变化时，左侧属性也跟随变化
 
 ## Disposables
+
+`Disposable` 接口表示。
+
+开始一个 producer 或者开始监视一个 signal 时可以获取到对应的 Disposable。可以通过 Disposables 开取消 (Interrupted) 任务。
+
+## Schedulers
+
+`SchedulerType` 接口表示。
+
+串行执行队列，
