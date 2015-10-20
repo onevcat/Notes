@@ -229,6 +229,20 @@ RAC 的世界其实是厌恶并行的，使用 Signal Producer 可以同时开�
 
 使用 Atomic 的方式来对值进行带锁操作：使用了 Spin 锁 `OSSpinLockLock`，主要用来存储 Signal 的 Observer。
 
+#### Event.swift
+
+RAC 由 event 构成，除了工具类型，Event 是最基础的类型。Event 枚举定义了事件类型：Next，Error，Completed 和 Interrupted。
+
+另外实现了基本的转换操作，即将一个 Value 值转换为另一个 Value 值，或者将一个 Error 转换为另一个 Error。这是所有 Signal 和 SignalProducer 操作的基础。
+
+```swift
+func map<U>(f: Value -> U) -> Event<U, Err>
+```
+
+```swift
+func mapError<F>(f: Err -> F) -> Event<Value, F>
+```
+
 #### Signal.swift
 
 `init` 中使用一个 observer (sink) 来在遇到事件时向其他之后添加的 observers 分发事件。
