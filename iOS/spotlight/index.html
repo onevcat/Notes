@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>OneV's Notes</title>
+	<title>Spotligt Search - OneV's Notes</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
         
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">OneV's Notes</a>
+            <a class="navbar-brand" href="../..">OneV's Notes</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -53,13 +53,13 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">主页</a>
+                    <li >
+                        <a href="../..">主页</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -70,7 +70,7 @@
         
             
 <li >
-    <a href="reserve-enginnering/tools/">工具</a>
+    <a href="../../reserve-enginnering/tools/">工具</a>
 </li>
 
         
@@ -85,13 +85,13 @@
         
             
 <li >
-    <a href="swift/advanced-swift/">Advanced Swift</a>
+    <a href="../../swift/advanced-swift/">Advanced Swift</a>
 </li>
 
         
             
 <li >
-    <a href="swift/rac/">Reactive Cocoa</a>
+    <a href="../../swift/rac/">Reactive Cocoa</a>
 </li>
 
         
@@ -105,8 +105,8 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="iOS/spotlight/">Spotligt Search</a>
+<li class="active">
+    <a href="./">Spotligt Search</a>
 </li>
 
         
@@ -116,7 +116,7 @@
                         
                             
 <li >
-    <a href="nshipster/">NSHipster</a>
+    <a href="../../nshipster/">NSHipster</a>
 </li>
 
                         
@@ -127,7 +127,7 @@
         
             
 <li >
-    <a href="photo/photoshop/">Photoshop</a>
+    <a href="../../photo/photoshop/">Photoshop</a>
 </li>
 
         
@@ -137,7 +137,7 @@
                         
                             
 <li >
-    <a href="misc/link/">收藏链接</a>
+    <a href="../../misc/link/">收藏链接</a>
 </li>
 
                         
@@ -155,13 +155,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../../swift/rac/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="reserve-enginnering/tools/">
+                        <a rel="prev" href="../../nshipster/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -177,16 +177,90 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#_1">欢迎</a></li>
+        <li class="main active"><a href="#spotlight">Spotlight 搜索</a></li>
+        
+            <li><a href="#nsuseractivity">NSUserActivity</a></li>
+        
+            <li><a href="#core-spotlight">Core Spotlight</a></li>
+        
+            <li><a href="#web-markup">Web markup</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">欢迎</h1>
-<p>这里是 <a href="http://onevcat.com">onevcat</a> 的公开笔记本。</p>
-<p>这个笔记本基于 <a href="http://www.mkdocs.org/">MkDocs</a> 构建，开源在 <a href="https://github.com/onevcat/Notes">GitHub</a> 上，记录了一些杂七杂八的东西，主要是为了方便自己之后查看。</p></div>
+<h1 id="spotlight">Spotlight 搜索</h1>
+<p>相关 API</p>
+<ul>
+<li>NSUserActivity</li>
+<li>Core Spotlight</li>
+<li>Web markup</li>
+</ul>
+<h3 id="nsuseractivity">NSUserActivity</h3>
+<p>在 iOS 8 中 Handoff 被引入。iOS 9 中添加了一些额外的 property 来启用搜索。</p>
+<p>为 model 建立 <code>NSUserActivity</code>，然后设置 <code>eligibleForSearch</code>：</p>
+<pre><code class="swift">// In model
+public var userActivityUserInfo: [NSObject: AnyObject] {
+  return [&quot;id&quot;: objectId]
+}
+
+public var userActivity: NSUserActivity {
+    let activity = NSUserActivity(activityType: &quot;reverse dns domain name&quot;)
+    activity.title = title
+    activity.userInfo = userActivityUserInfo
+    activity.keywords = [{localized key words}]
+    return activity
+}
+
+// In vc for a model
+let activity = xxx.userActivity
+activity.eligibleForSearch = true
+
+// 完成配置后可以将这个 activity 设置为 view controller 的 activity：
+self.userActivity = activity
+</code></pre>
+
+<p>最后，override <code>updateUserActivityState</code>。系统将不时调用这个方法，需要保持 userInfo 最新。</p>
+<pre><code class="swift">override func updateUserActivityState(activity: NSUserActivity) {
+  activity.addUserInfoEntriesFromDictionary(xxx.userActivityUserInfo)
+}
+</code></pre>
+
+<h3 id="core-spotlight">Core Spotlight</h3>
+<p>建立搜索索引，可以看做用来查询搜索信息的数据库。</p>
+<p>通过设置合适的 <code>CSSearchableItemAttributeSet</code> 可以在 Spotlight 的 搜索结果中显示详细信息。</p>
+<h4 id="cssearchableitemattributeset-id">在 CSSearchableItemAttributeSet 中设置唯一 id</h4>
+<p>通过设置 <code>relatedUniqueIdentifier</code> 可以把当前 activity 和其他的 (不一定是你的 app 中的) 进行区分，比如同一个地点 keyword 在不用 app 中都出现。CoreSpotlight 的 indexing 系统将通过这个 id 区分不同 activity 并进行优先级排序。</p>
+<pre><code class="swift">attributeSet.relatedUniqueIdentifier = {某个唯一 id}
+</code></pre>
+
+<p>在设置 <code>relatedUniqueIdentifier</code> 后，需要创建对应的 <code>CSSearchableItem</code> 提供给 CS 框架。</p>
+<pre><code class="swift">// In model
+var searchableItem: CSSearchableItem {
+    let item = CSSearchableItem(uniqueIdentifier: objectId, domainIdentifier: Employee.domainIdentifier, attributeSet: attributeSet)
+    return item
+}
+
+let items = allItems()
+let searchableItems = employees.map {
+  $0.searchableItem
+}
+CSSearchableIndex.defaultSearchableIndex().indexSearchableItems(searchableItems) {
+  error in
+  if let error = error {
+    print(&quot;Error indexing: \(error)&quot;)
+  } else {
+    print(&quot;Indexed&quot;)
+  }
+}
+</code></pre>
+
+<p>注意，普通的 <code>eligibleForSearch</code> 和 <code>index</code> 的结果在 app delegate 中对应的 activity 的类型是不同的。</p>
+<p>search item -&gt; 设置的 identifier，userInfo 中设置的 key 
+indexed item -&gt; CSSearchableItemActionType, CSSearchableItemActivityIdentifier</p>
+<h3 id="web-markup">Web markup</h3>
+<p>将网页内容映射到 app 侧。</p></div>
             
         </div>
 
@@ -196,12 +270,12 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
@@ -230,8 +304,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 0.14.0
-Build Date UTC : 2015-12-04 13:37:13.578042
--->
