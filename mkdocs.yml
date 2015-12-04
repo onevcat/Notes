@@ -8,7 +8,7 @@ pages:
         - Advanced Swift: swift/advanced-swift.md
         - Reactive Cocoa: swift/rac.md
     - iOS:
-        -Spotligt Search: iOS/spotlight.md
+        - Spotligt Search: iOS/spotlight.md
     - NSHipster: nshipster/index.md
     - 摄影:
         - Photoshop: photo/photoshop.md
