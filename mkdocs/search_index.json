@@ -157,13 +157,38 @@
         }, 
         {
             "location": "/misc/link/", 
-            "text": "\u6587\u6863\n\n\nMarkup Formatting Reference\n - Apple markup", 
+            "text": "\u6587\u6863\n\n\nMarkup Formatting Reference\n - Apple markup for using in Xcode\n\n\n\u5de5\u5177\n\n\nIBM Swift Sandbox\n - Swift Online REPL\n\nCodecov\n - CI for test coverage\n\n\n\u8bbe\u8ba1\n\n\nSketch Repo\n - \u4e00\u4e2a Sketch \u7684\u8d44\u6e90\u7ad9\u70b9\n\n\n\u89c6\u9891\n\n\nFunctional Swift Conference", 
             "title": "\u6536\u85cf\u94fe\u63a5"
         }, 
         {
             "location": "/misc/link/#_1", 
-            "text": "Markup Formatting Reference  - Apple markup", 
+            "text": "Markup Formatting Reference  - Apple markup for using in Xcode", 
             "title": "\u6587\u6863"
+        }, 
+        {
+            "location": "/misc/link/#_2", 
+            "text": "IBM Swift Sandbox  - Swift Online REPL Codecov  - CI for test coverage", 
+            "title": "\u5de5\u5177"
+        }, 
+        {
+            "location": "/misc/link/#_3", 
+            "text": "Sketch Repo  - \u4e00\u4e2a Sketch \u7684\u8d44\u6e90\u7ad9\u70b9", 
+            "title": "\u8bbe\u8ba1"
+        }, 
+        {
+            "location": "/misc/link/#_4", 
+            "text": "Functional Swift Conference", 
+            "title": "\u89c6\u9891"
+        }, 
+        {
+            "location": "/misc/uncategory/", 
+            "text": "Live Photos\n\n\nWWDC 15 \u6ca1\u6709\u53d1\u8868\uff0c2015 \u5e74 9 \u6708\u7684 Special Event \u4e0a\u968f iPhone 6s \u4e00\u540c\u53d1\u8868\u3002\n\n\niPhone 6/6s \u53ef\u4ee5\u62cd\u6444\uff0c\u5185\uff1a3 \u79d2\u65f6\u95f4\u7684\u89c6\u9891\u548c\u4e00\u5f20 JPG \u7ec4\u6210\uff0ciOS 9 \u4ee5\u540e\u7684\u8bbe\u5907\u90fd\u53ef\u4ee5\u64ad\u653e\u3002\n\n\niOS 9.1 \u4e2d live photos \u6709\u5173\u7684 API \u5df2\u7ecf\u516c\u5f00\uff1a\n\n\n\n\n\u663e\u793a\uff0c\u518d\u751f\uff1a\nPHLivePhotoView\n\n\n\u5206\u4eab\uff1a\nPHAssetResource\n\n\n\n\n\u5bf9 Live Photo \u505a\u7f16\u8f91\u7684\u65f6\u5019\uff0c\u9700\u8981\u6ce8\u610f\u5bf9\u6240\u6709\u7684 frame \u90fd\u4f5c\u51fa\u8c03\u6574\u3002\n\n\n\n\nVine \u652f\u6301 6 \u79d2\u77ed\u89c6\u9891\uff0c\u76f8\u6bd4\u4e8e Vine\uff0cLive Photo \u66f4\u52a0\u5185\u655b\u3002\u73b0\u65f6\u70b9\uff0cFacebook \u548c Instagram \u6682\u65f6\u90fd\u8fd8\u6ca1\u6709\u5bf9\u5e94 Live Photo\u3002\n\n\n\n\n\u5411 Simulator \u4e2d\u4f20\u9001 Live Photo \u7684\u65b9\u5f0f\uff1a\n\n\n\n\niPhone \u62cd\u6444\n\n\niPhone -\n \u4f20\u8f93\u5230\u7167\u7247 app\n\n\n\u4f7f\u7528 iCloud \u5bfc\u5165\uff0c\u4e0d\u80fd\u76f4\u63a5 drag \n drop (\u9ebb\u70e6)\u3002\n\n\n\n\n\u4e5f\u8bb8\u53ef\u4ee5\u8003\u8651\u5199\u4e2a\u5de5\u5177\u6765\u5728\u5b9e\u673a\u548c Simulator \u4e4b\u95f4\u8fdb\u884c\u8f6c\u6362\u3002", 
+            "title": "\u672a\u5206\u7c7b"
+        }, 
+        {
+            "location": "/misc/uncategory/#live-photos", 
+            "text": "WWDC 15 \u6ca1\u6709\u53d1\u8868\uff0c2015 \u5e74 9 \u6708\u7684 Special Event \u4e0a\u968f iPhone 6s \u4e00\u540c\u53d1\u8868\u3002  iPhone 6/6s \u53ef\u4ee5\u62cd\u6444\uff0c\u5185\uff1a3 \u79d2\u65f6\u95f4\u7684\u89c6\u9891\u548c\u4e00\u5f20 JPG \u7ec4\u6210\uff0ciOS 9 \u4ee5\u540e\u7684\u8bbe\u5907\u90fd\u53ef\u4ee5\u64ad\u653e\u3002  iOS 9.1 \u4e2d live photos \u6709\u5173\u7684 API \u5df2\u7ecf\u516c\u5f00\uff1a   \u663e\u793a\uff0c\u518d\u751f\uff1a PHLivePhotoView  \u5206\u4eab\uff1a PHAssetResource   \u5bf9 Live Photo \u505a\u7f16\u8f91\u7684\u65f6\u5019\uff0c\u9700\u8981\u6ce8\u610f\u5bf9\u6240\u6709\u7684 frame \u90fd\u4f5c\u51fa\u8c03\u6574\u3002   Vine \u652f\u6301 6 \u79d2\u77ed\u89c6\u9891\uff0c\u76f8\u6bd4\u4e8e Vine\uff0cLive Photo \u66f4\u52a0\u5185\u655b\u3002\u73b0\u65f6\u70b9\uff0cFacebook \u548c Instagram \u6682\u65f6\u90fd\u8fd8\u6ca1\u6709\u5bf9\u5e94 Live Photo\u3002   \u5411 Simulator \u4e2d\u4f20\u9001 Live Photo \u7684\u65b9\u5f0f\uff1a   iPhone \u62cd\u6444  iPhone -  \u4f20\u8f93\u5230\u7167\u7247 app  \u4f7f\u7528 iCloud \u5bfc\u5165\uff0c\u4e0d\u80fd\u76f4\u63a5 drag   drop (\u9ebb\u70e6)\u3002   \u4e5f\u8bb8\u53ef\u4ee5\u8003\u8651\u5199\u4e2a\u5de5\u5177\u6765\u5728\u5b9e\u673a\u548c Simulator \u4e4b\u95f4\u8fdb\u884c\u8f6c\u6362\u3002", 
+            "title": "Live Photos"
         }
     ]
 }

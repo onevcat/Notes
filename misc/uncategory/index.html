@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>OneV's Notes</title>
+	<title>未分类 - OneV's Notes</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">OneV's Notes</a>
+            <a class="navbar-brand" href="../..">OneV's Notes</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -54,12 +54,12 @@
                 
                 
                     <li >
-                        <a href=".">主页</a>
+                        <a href="../..">主页</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -70,7 +70,7 @@
         
             
 <li >
-    <a href="reserve-enginnering/tools/">工具</a>
+    <a href="../../reserve-enginnering/tools/">工具</a>
 </li>
 
         
@@ -85,13 +85,13 @@
         
             
 <li >
-    <a href="swift/advanced-swift/">Advanced Swift</a>
+    <a href="../../swift/advanced-swift/">Advanced Swift</a>
 </li>
 
         
             
 <li >
-    <a href="swift/rac/">Reactive Cocoa</a>
+    <a href="../../swift/rac/">Reactive Cocoa</a>
 </li>
 
         
@@ -106,7 +106,7 @@
         
             
 <li >
-    <a href="iOS/spotlight/">Spotligt Search</a>
+    <a href="../../iOS/spotlight/">Spotligt Search</a>
 </li>
 
         
@@ -116,7 +116,7 @@
                         
                             
 <li >
-    <a href="nshipster/">NSHipster</a>
+    <a href="../../nshipster/">NSHipster</a>
 </li>
 
                         
@@ -127,7 +127,7 @@
         
             
 <li >
-    <a href="photo/photoshop/">Photoshop</a>
+    <a href="../../photo/photoshop/">Photoshop</a>
 </li>
 
         
@@ -137,13 +137,13 @@
                         
                             
 <li >
-    <a href="misc/link/">收藏链接</a>
+    <a href="../link/">收藏链接</a>
 </li>
 
                         
                             
-<li >
-    <a href="misc/uncategory/">未分类</a>
+<li class="active">
+    <a href="./">未分类</a>
 </li>
 
                         
@@ -161,8 +161,8 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../link/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -180,15 +180,36 @@
 
         <div class="container">
             
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#live-photos">Live Photos</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
-
-
+<h2 id="live-photos">Live Photos</h2>
+<p>WWDC 15 没有发表，2015 年 9 月的 Special Event 上随 iPhone 6s 一同发表。</p>
+<p>iPhone 6/6s 可以拍摄，内：3 秒时间的视频和一张 JPG 组成，iOS 9 以后的设备都可以播放。</p>
+<p>iOS 9.1 中 live photos 有关的 API 已经公开：</p>
+<ul>
+<li>显示，再生：<code>PHLivePhotoView</code></li>
+<li>分享：<code>PHAssetResource</code></li>
+</ul>
+<p>对 Live Photo 做编辑的时候，需要注意对所有的 frame 都作出调整。</p>
+<ul>
+<li>Vine 支持 6 秒短视频，相比于 Vine，Live Photo 更加内敛。现时点，Facebook 和 Instagram 暂时都还没有对应 Live Photo。</li>
+</ul>
+<p>向 Simulator 中传送 Live Photo 的方式：</p>
+<ol>
+<li>iPhone 拍摄</li>
+<li>iPhone -&gt; 传输到照片 app</li>
+<li>使用 iCloud 导入，不能直接 drag &amp; drop (麻烦)。</li>
+</ol>
+<p>也许可以考虑写个工具来在实机和 Simulator 之间进行转换。</p></div>
+            
         </div>
 
         <footer class="col-md-12">
@@ -197,12 +218,12 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
