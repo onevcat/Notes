@@ -9,6 +9,8 @@ pages:
         - Reactive Cocoa: swift/rac.md
     - iOS:
         - Spotligt Search: iOS/spotlight.md
+    - Elixir:
+        - Basic: elixir/basic.md
     - NSHipster: nshipster/index.md
     - 摄影:
         - Photoshop: photo/photoshop.md
