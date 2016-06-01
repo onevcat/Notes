@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2015-12-19</lastmod>
+     <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -30,8 +30,14 @@
     </url>
         
     <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/nshipster/</loc>
-     <lastmod>2015-12-19</lastmod>
+     <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,13 +49,13 @@
         
     <url>
      <loc>None/misc/link/</loc>
-     <lastmod>2015-12-19</lastmod>
+     <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/misc/uncategory/</loc>
-     <lastmod>2015-12-19</lastmod>
+     <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>工具 - OneV's Notes</title>
+	<title>Basic - OneV's Notes</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -69,8 +69,8 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">工具</a>
+<li >
+    <a href="../../reserve-enginnering/tools/">工具</a>
 </li>
 
         
@@ -120,8 +120,8 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="../../elixir/basic/">Basic</a>
+<li class="active">
+    <a href="./">Basic</a>
 </li>
 
         
@@ -177,12 +177,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../..">
+                        <a rel="next" href="../../iOS/spotlight/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../swift/advanced-swift/">
+                        <a rel="prev" href="../../nshipster/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -198,67 +198,60 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#cycript">cycript</a></li>
+        <li class="main active"><a href="#elixir-basic">Elixir Basic</a></li>
         
-            <li><a href="#_1">命令以 ? 开头</a></li>
+            <li><a href="#style-guide">Style Guide</a></li>
         
-            <li><a href="#objective-c">与 Objective-C 交互</a></li>
+            <li><a href="#_1">正则：</a></li>
         
-            <li><a href="#_2">其他</a></li>
-        
-    
-        <li class="main "><a href="#dumpdecrypted">dumpdecrypted</a></li>
+            <li><a href="#_2">集合类型</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="cycript"><a href="http://www.cycript.org">cycript</a></h2>
-<p>Cycript allows developers to explore and modify running applications on either iOS or Mac OS X using a hybrid of Objective-C++ and JavaScript syntax through an interactive console that features syntax highlighting and tab completion.</p>
-<p>参考文档 <a href="http://iphonedevwiki.net/index.php/Cycript">iPhonDev Wiki</a>，<a href="http://www.cycript.org/manual/">Cycript Manual</a></p>
-<h3 id="_1">命令以 ? 开头</h3>
-<ul>
-<li>?syntax 高亮</li>
-<li>?exit</li>
-<li>?expand 展开 CYON (Cycript Object Notation)。一般用来展开字符串中的 <code>\n</code></li>
-<li>?debug</li>
-</ul>
-<h3 id="objective-c">与 Objective-C 交互</h3>
-<ul>
-<li><code>@</code> - @"hello"，@[2,4,5]</li>
-<li>自省 - <code>instanceof</code> <code>@"hello" instanceof String</code> -&gt; <code>true</code></li>
-<li>selector - @selector(this:is:a:message:) -&gt; sel_registerName("this:is:a:message:")
-    可以直接 call() 一个 selector</li>
-<li><code>#</code> 代表 object：UIApp -&gt; #"<SpringBoard: 0x10e803490>", s = #0x10e803490 -&gt; #"<SpringBoard: 0x10e803490>"</li>
-<li>使用 <code>*</code> 返回对象结构的 representation，使用 <code>-&gt;</code> 访问成员</li>
-<li><code>messages</code> 获取类型能响应的消息：<code>NSObject.messages</code></li>
-<li>frame -  [[1, 1],{width:2,height:2}]</li>
-<li>添加 Category</li>
-</ul>
-<pre><code>cy# @implementation NSObject (MyCategory)
-cy&gt; - description { return &quot;hello&quot;; }
-cy&gt; - (double) f:(int)v  { return v * 0.5; }
-cy&gt; @end
-cy# o = [new NSObject init]
-#&quot;hello&quot;
-cy# [o f:3]
-1.5
+<h2 id="elixir-basic">Elixir Basic</h2>
+<h3 id="style-guide">Style Guide</h3>
+<p><a href="https://github.com/niftyn8/elixir_style_guide">The Elixir Style Guide</a></p>
+<h3 id="_1">正则：</h3>
+<pre><code class="elixir">Regex.run ~r{[aeiou]}, ​&quot;caterpillar&quot;​
+Regex.scan ~r{[aeiou]}, ​&quot;caterpillar&quot;​
+Regex.split ~r{[aeiou]}, ​&quot;caterpillar&quot;​
+Regex.replace ~r{[aeiou]}, ​&quot;caterpillar&quot;​, ​&quot;*&quot;​
 </code></pre>
 
-<ul>
-<li>block：<code>block = ^ int (int value) { return value + 5; }</code></li>
-</ul>
-<h3 id="_2">其他</h3>
-<ul>
-<li>choose(Class)：所有 <code>Class</code> 的实例。通过寻找 heap 上内存蓝图一致的块来确定是否是实例</li>
-<li>和 Mobile Substrate 一起使用：@import com.saurik.substrate.MS</li>
-<li>C 交互：使用 dlopen 和 dlsym 加载符号：</li>
-</ul>
-<pre><code class="c">dlsym(RTLD_DEFAULT, &quot;swift_demangleClassSimple&quot;)
+<h3 id="_2">集合类型</h3>
+<h4 id="tuple">Tuple</h4>
+<p><code>{1, 2}</code></p>
+<h4 id="list">List</h4>
+<pre><code class="elixir">[1, 2, 3] ++ [4, 5, 6] # [1,2,3,4,5,6]
+1 in [1,2,3,4] # true
 </code></pre>
 
-<h2 id="dumpdecrypted"><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h2></div>
+<h4 id="keyword-list">Keyword List</h4>
+<pre><code class="elixir">[name: ​&quot;Dave&quot;​, city: ​&quot;Dallas&quot;​, likes: ​&quot;Programming&quot;​]
+</code></pre>
+
+<p>其实是 tuple 的 list</p>
+<pre><code class="elixir">[{:name, ​&quot;Dave&quot;​}, {:city, ​&quot;Dallas&quot;​}, {:likes, ​&quot;Programming&quot;​}]
+</code></pre>
+
+<h4 id="map">Map</h4>
+<pre><code class="elixir">states = %{&quot;AL&quot; =&gt; &quot;Alabama&quot;, &quot;WI&quot; =&gt; &quot;Wisconsin&quot;}
+states[&quot;AL&quot;]
+</code></pre>
+
+<p>如果 key 是 atom 的话，可以直接使用 dot notation：</p>
+<pre><code class="elixir">colors = %{red: 0xff0000, green: 0x00ff00, blue: 0x0000ff}
+colors.red # 16711680
+</code></pre>
+
+<h4 id="notation">&amp; notation</h4>
+<p>使用 &amp; notation 创建匿名函数：</p>
+<pre><code class="elixir">add_one = &amp;(&amp;1 + 1) ​# same as add_one = fn (n) -&gt; n + 1 end​
+sum = &amp;(&amp;1 + &amp;2)
+</code></pre></div>
             
         </div>
 
